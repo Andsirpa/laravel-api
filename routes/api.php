@@ -18,7 +18,7 @@ use App\Http\Controllers\Api\ProjectController;
 // Route::get('/projects', [ProjectController::class, 'index'])->name('api.projects.index');
 // Route::get('/projects/{projects}', [ProjectController::class, 'show'])->name('api.projects.show');
 
-Route::apiResource('projects', ProjectController::class);
+Route::apiResource('projects', ProjectController::class)->only(['index', 'show']);  //con only scelgo quali rotte generare
 
 Route::middleware('auth:sanctum')->get('/user', function (Request $request) {
     return $request->user();
